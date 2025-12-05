@@ -1,4 +1,4 @@
-"""
+
 # while loops
 
 count =1 
@@ -209,7 +209,7 @@ while i<= n:
        i += 1
 
 print("total sum is:", sum)
-"""
+
 
 #wap to find the factorial of first n numbers(using for)
 

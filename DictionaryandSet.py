@@ -1,5 +1,5 @@
 #dictionary are ued to store data values in key:value pair
-"""
+
 info ={
     "name" : "arpan nepal",
     "age" : 23,
@@ -113,7 +113,7 @@ dictionary ={
 }
 
 print(dictionary)
-"""
+
 
 #wap to find that how many classrooms are needed by all students . assume one classroom is required for 1 subject
 # "python", "java","c++","python","javascript",

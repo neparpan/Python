@@ -1,4 +1,4 @@
-"""
+
 name = input("enter yopur name: ")
 age = int(input("enter your age: "))
 marks = float(input("enter your marks: "))
@@ -20,7 +20,7 @@ num2 = int(input("enter 2nd number: "))
 
 print("sum of num1 and num2 is:", num1 + num2)
 
-"""
+
 #wap to input 2 floating points numbers and print their average 
 
 a = float(input("enter first number: "))

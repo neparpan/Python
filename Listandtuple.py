@@ -1,4 +1,4 @@
-"""
+
 #in list we can store different type (integer, float, string,etc)
 #lists are mutable(change)
 
@@ -91,7 +91,7 @@ else:
 tup = ("C","D","A","A","B","B","A")
 print(tup.count("A"))
 
-    """
+ 
 
 
 #sort the above values in a list and store them from "A" to "D"

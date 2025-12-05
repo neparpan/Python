@@ -1,5 +1,5 @@
 #Arithmetic Operators
-"""
+
 a = 5
 b= 7
 
@@ -35,7 +35,7 @@ num = 10
 #num *= 10
 num /= 10
 print(num)
-"""
+
 
 #logical operator
 
