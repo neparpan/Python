@@ -124,7 +124,6 @@ s1.hello()
 #Encapsulation
 #Wrapping data and functions into a single unit(object)
 
-"""
 # Abstration 
 
 
@@ -146,3 +145,239 @@ car1.start()
 
 
 
+
+
+#del keyword
+
+class Student:
+    def __init__(self, name):
+        self.name = name
+s1 = Student("arpan")
+print(s1.name) 
+del s1.name
+
+
+
+#private attributes and method
+#  __ for private
+
+class Account:
+    def __init__(self, acc_no, acc_pass):
+        self.acc_no =acc_no
+        self.__acc_pass = acc_pass
+
+
+    def reset_pass(self):
+        print(self.__acc_pass)
+
+
+acc1 = Account("123345", "abcdef")
+
+print(acc1.acc_no)
+print(acc1.reset_pass())
+
+
+
+
+#print annonymous
+
+class Person:
+    __name = "anonymous"
+
+
+    def __hello(self):
+     print("hello person!!")
+
+
+    def welcome(self):
+      self.__hello()
+
+p1 = Person()
+print(p1.welcome())
+
+
+ 
+
+#Inheritance
+#clas car:
+#...........
+
+
+# class TOYOTAcAR(car):
+#.......
+
+class Car:
+    @staticmethod
+    def start():
+        print("car started..")
+
+    @staticmethod
+    def stop():
+        print("car stopped")
+
+
+class ToyotaCar(Car):
+    def __init__(self, name):
+        self.name = name
+
+
+
+car1 = ToyotaCar("Fortuner")
+car2 = ToyotaCar("Prius")
+
+
+car1.start()  
+car2.stop()  
+
+
+# multi level inheritance
+
+class Car:
+    @staticmethod
+    def start():
+        print("car started..")
+
+    @staticmethod
+    def stop():
+        print("car stopped")
+
+
+class ToyotaCar(Car):
+    def __init__(self, brand):
+        self.brand = brand
+
+
+
+class Fortuner(Car):
+    def __init__(self, type):
+        self.type =type
+        
+
+Car1 = Fortuner("diesel")
+Car1.start()
+
+
+
+#multiple Inheritance
+
+class A :
+    varA = "welcome to class A"
+
+class B :
+    varB = "welcome to class B"
+
+
+class C(A, B) :
+    varC = "welcome to class C"
+
+
+c1 = C()
+
+print(c1.varC)
+print(c1.varB)
+print(c1.varA)
+
+
+
+#super method
+# used to accss methods of the parent class
+
+class Car:
+    def __init__(self, type):
+        self.type = type
+
+        @staticmethod
+        def start():
+            print("car started..")
+
+
+        @staticmethod
+        def stop():
+            print("car stopped")
+
+class ToyotaCar(Car):
+    def __init__(self, name, type):
+          self.name = name
+          super().__init__(type)
+
+car1 = ToyotaCar("Supra", "petrol")
+print(car1.type)
+
+
+
+
+
+# Class Method
+# a class method is bound to the class & receives the class as an implicit first argument.
+#note: static method can't access or modify class state & generally for utility
+
+
+class Person:
+    name= "anonymous"
+
+    #def changeName(self, name):
+        #self.name = name
+        #self.__class__.name = "arpan"
+
+#class method
+
+    @classmethod
+    def changeName(cls,name):
+        cls.name = name
+
+p1 = Person()
+p1.changeName("arpan nepal")
+print(p1.name)
+
+
+
+
+#property method
+
+
+class Student:
+    def __init__(self, phy, chem, math):
+        self.phy = phy
+        self.chem = chem
+        self.math = math
+
+    @property
+    def percentage(self):
+        return str((self.phy + self.chem + self.math)/3) + "%"
+
+stu1 = Student(98, 97, 99)
+print(stu1.percentage)  
+
+stu1.phy = 86
+print(stu1. percentage)
+
+ """
+
+# Polymorphism : operator overloading
+#when the same operator is allowed to have different meaning to use the method as a property
+
+
+class Complex:
+    def __init__(self, real, img):
+        self.real = real
+        self.img = img
+
+
+    def showNumber(self):
+        print(self.real, "i +", self.img, "j")
+
+    def add(self, num2):
+        newReal = self.real +num2.real
+        newImg = self.img + num2.img
+        return Complex(newReal, newImg)
+
+num1 = Complex(1, 3)
+num1.showNumber()
+
+
+num2 = Complex(4, 6)
+num2.showNumber()
+
+
+num3 = num1.add(num2)
+num3.showNumber()
